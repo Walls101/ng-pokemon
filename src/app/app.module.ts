@@ -11,7 +11,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
-    AppRoutingModule,
     Page4Component,
     CardComponent,
   ],
@@ -20,8 +19,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     MatCardModule,
     HttpClientModule,
-    Page4Component,
-    CardComponent,
     BrowserAnimationsModule,
   ],
   providers: [],
