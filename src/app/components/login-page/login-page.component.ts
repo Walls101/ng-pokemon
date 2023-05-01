@@ -20,4 +20,12 @@ export class LoginPageComponent {
     const email = this.loginForm.controls['email'].value;
     const password = this.loginForm.controls['password'].value;
   }
+  register(){
+    const username = this.loginForm.controls['username'].value
+    const firstname = this.loginForm.controls['firstname'].value
+    const lastname = this.loginForm.controls['lastname']
+    const email = this.loginForm.controls['email'].value;
+    const password = this.loginForm.controls['password'].value;
+
+  }
 }
