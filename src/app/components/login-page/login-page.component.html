@@ -1,0 +1,40 @@
+<div class="container">
+    <!-- <mat-card> -->
+    <h1 class="center">Login</h1>
+    <form (ngSubmit)="login()">
+      <div class="center">
+        <label>Email</label>
+        <input type="email" formControlName="email" required />
+      </div>
+      <div class="center">
+        <label>Password</label>
+        <input type="password" formControlName="password" required />
+      </div>
+      <button type="submit" class="mx-auto">Login</button>
+    </form>
+<!-- </mat-card> -->
+<h1 class="center">Register</h1>
+<form (ngSubmit)="register()">
+  <div class="center">
+    <label>Username</label>
+    <input type="text" formControlName="username" required />
+  </div>
+  <div class="center">
+    <label>First Name</label>
+    <input type="text" formControlName="firstname" required />
+  </div>
+  <div class="center">
+    <label>Last Name</label>
+    <input type="text" formControlName="lastname" required />
+  </div>
+  <div class="center">
+    <label>Email</label>
+    <input type="email" formControlName="email" required />
+  </div>
+  <div class="center">
+    <label>Password</label>
+    <input type="password" formControlName="password" required />
+  </div>
+  <button type="submit" class="mx-auto">Register</button>
+</form>
+  </div>
