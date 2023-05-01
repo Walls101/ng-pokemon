@@ -38,10 +38,7 @@ export class CardComponent implements OnInit {
     this.indexes.forEach(index => {
       this.apiService.getData(index).subscribe((data) =>
         //pass to object
-        this.cards.push({name: data?.forms[0].name, types: {type1: data?.types[0].type.name, type2: data?.types[1].type.name}, image: '' },)
-      );
-      this.apiService.getImage(index).subscribe((data) =>
-        this.cards[index-1].image = data
+        this.cards.push({name: data?.forms[0].name, types: {type1: data?.types[0].type.name, type2: data?.types[1].type.name}, image: data?.sprites.front_default },)
       );
     })
   }
