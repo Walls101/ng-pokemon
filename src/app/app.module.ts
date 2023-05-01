@@ -8,7 +8,7 @@ import { CardComponent } from './components/cards/card/card.component';
 @NgModule({
   declarations: [
     AppComponent,
-    CardComponent
+    CardComponent,
   ],
   imports: [
     BrowserModule,
