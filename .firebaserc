@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "pokemon-ng-f46af": {
+      "hosting": {
+        "angular-pokemon": [
+          "pokemon-ng-f46af"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "pokemon-ng-f46af"
+  }
+}

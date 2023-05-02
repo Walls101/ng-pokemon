@@ -105,6 +105,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "angular-pokemon:build:production",
+            "firebaseProject": "pokemon-ng-f46af",
+            "firebaseHostingSite": "pokemon-ng-f46af"
+          }
         }
       }
     }
