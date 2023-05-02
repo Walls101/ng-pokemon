@@ -11,6 +11,12 @@ import { AngularFireModule } from '@angular/fire/compat'
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore'
 import { Page4Component } from './components/pages/page4/page4.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatSliderModule } from "@angular/material/slider";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatNativeDateModule } from '@angular/material/core';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +31,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
     HttpClientModule,
     AngularFirestoreModule,
     AngularFireModule.initializeApp(environment.firebase),
+    MatGridListModule,
+    MatRadioModule,
+    MatProgressSpinnerModule,
+    MatSliderModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    MatNativeDateModule,
+    ReactiveFormsModule
+
   ],
   exports: [
     MatCardModule
