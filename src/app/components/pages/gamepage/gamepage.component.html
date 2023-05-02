@@ -1,9 +1,19 @@
 
 <div id="gamepage-container">
-    <div style="height: 20%;">hi</div>
-    <div id="game-cards-container">
-        <div *ngFor="let sample of samples">
-            <div class="game-card-container">{{sample}}</div>
+    <div style="height: 10%;">A navbar could go here if we want.</div>
+    <div id="game-grid-container">
+        <table class="grid-order" id="grid-order-top">
+            <tr id="grid-order-top-grid">
+                <td class="grid-order-number" id="grid-order-top-number-{{order}}" *ngFor="let order of grid_order_top">{{order}}</td>
+            </tr>
+        </table>
+        <div id="lower-container">
+            <div class="grid-order" id="grid-order-side">
+                <span class="grid-order-letter" *ngFor="let order of grid_order_side">{{order}}</span>
+            </div>
+            <div id="game-cards-container">
+                <span class="game-card-container" *ngFor="let sample of samples">{{sample}}</span>
+            </div>
         </div>
     </div>
 </div>
