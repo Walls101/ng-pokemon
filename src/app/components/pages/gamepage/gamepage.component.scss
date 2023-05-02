@@ -7,7 +7,7 @@
 #game-grid-container{
     width: 100%;
     height: 90%;
-    background-color: gainsboro;
+    background-image: url('../../../Images/pokemonstadium.jpg');
 }
 
 .grid-order{
@@ -51,7 +51,8 @@
     justify-content: center;
 }
 .grid-order-letter:nth-child(odd){
-    border: 1px solid black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
 }
 
 #game-cards-container{
@@ -66,4 +67,5 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    color: crimson;
 }
