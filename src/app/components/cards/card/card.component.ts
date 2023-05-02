@@ -21,13 +21,15 @@ export class CardComponent implements OnInit {
     cards = [
       {
         name: 'bulbasaur',
-        types: {type1: grass, type2: poison}
+        types: {type1: grass, type2: poison},
         image: ___,
+        index: 1
       },
       {
         name: 'ivyasaur',
-        types: {type1: grass, type2: poison}
+        types: {type1: grass, type2: poison},
         image: ___,
+        index: 2
       },
       etc
     ]
@@ -38,7 +40,7 @@ export class CardComponent implements OnInit {
     this.indexes.forEach(index => {
       this.apiService.getData(index).subscribe((data) =>
         //pass to object
-        this.cards.push({name: data?.forms[0].name, types: {type1: data?.types[0].type.name, type2: data?.types[1].type.name}, image: data?.sprites.front_default },)
+        this.cards.push({name: data?.forms[0].name, types: {type1: data?.types[0].type.name, type2: data?.types[1].type.name}, image: data?.sprites.front_default, index: index },)
       );
     })
   }
