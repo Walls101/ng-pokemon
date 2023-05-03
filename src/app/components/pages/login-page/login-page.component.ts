@@ -7,6 +7,8 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Observable } from 'rxjs';
 import { AuthenticationService } from '../../../services/authentication.service'
 import { HotToastService } from '@ngneat/hot-toast'
+import { AngularFireModule } from '@angular/fire/compat';
+import { Auth } from '@angular/fire/auth';
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
@@ -44,9 +46,10 @@ export class LoginPageComponent {
     const username = this.loginForm.controls['username'].value
     const email = this.loginForm.controls['email'].value;
     const password = this.loginForm.controls['password'].value
-    this.db.collection('player').add({
+    this.db.collection('players').add({
       field: username, email, password
-    })
+    }).then(() => console.log('Success on add'))
+    .catch(error => console.log('add', error))
 
   }
   noAccount() {
@@ -59,8 +62,9 @@ export class LoginPageComponent {
     if(!this.loginForm.valid){
       return;
     }
-    // const { email, password } = this.loginForm.value
-    // this.authService.login(email, password).pipe(this.toast.observe({
+    const { email, password } = this.loginForm.value
+    this.authService.login(email, password)
+    //.pipe(this.toast.observe({
     //   success: 'Logged in successfully',
     //   loading: 'Logging in...',
     //   error: 'There was an error'

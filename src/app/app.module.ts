@@ -12,7 +12,8 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore'
 import { Page4Component } from './components/pages/page4/page4.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import {firebase, firebaseui, FirebaseUIModule} from 'firebaseui-angular';
-import { Auth } from '@angular/fire/auth';
+import { Auth, provideAuth } from '@angular/fire/auth';
+import { getAuth } from 'firebase/auth';
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
   signInFlow: 'popup',
   signInOptions: [
@@ -40,7 +41,8 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     HttpClientModule,
     AngularFirestoreModule,
     AngularFireModule.initializeApp(environment.firebase),
-    FirebaseUIModule.forRoot(firebaseUiAuthConfig)
+    FirebaseUIModule.forRoot(firebaseUiAuthConfig),
+    provideAuth(()=> getAuth())
   ],
   exports: [
     MatCardModule

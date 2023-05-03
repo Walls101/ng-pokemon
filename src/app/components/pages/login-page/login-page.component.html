@@ -1,7 +1,7 @@
 <div class="container">
     <mat-card *ngIf="!hasNoAccount">
     <h1 class="center">Login</h1>
-    <form (ngSubmit)="login()">
+    <form (ngSubmit)="submit()">
       <div class="center">
         <label>Email</label>
         <input type="email" formControlName="email" required />
