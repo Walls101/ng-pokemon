@@ -11,7 +11,8 @@ import { AngularFireModule } from '@angular/fire/compat'
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore'
 import { Page4Component } from './components/pages/page4/page4.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { GamepageComponent } from './components/pages/gamepage/gamepage.component'
+import { GamepageComponent } from './components/pages/gamepage/gamepage.component';
+import { ErrorpageComponent } from './components/pages/errorpage/errorpage.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +20,7 @@ import { GamepageComponent } from './components/pages/gamepage/gamepage.componen
     CardComponent,
     LoginPageComponent,
     GamepageComponent,
+    ErrorpageComponent,
   ],
   imports: [
     BrowserModule,
