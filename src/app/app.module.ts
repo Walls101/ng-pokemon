@@ -17,6 +17,7 @@ import { getAuth } from 'firebase/auth';
 import { FormsModule } from '@angular/forms';
 import { AngularFireAuthModule, USE_EMULATOR as USE_AUTH_EMULATOR } from '@angular/fire/compat/auth';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatButtonModule } from '@angular/material/button'
 
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
@@ -41,6 +42,7 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
   ],
   imports: [
     BrowserModule,
+    MatButtonModule,
     BrowserAnimationsModule,
     FormsModule,
     AppRoutingModule,
