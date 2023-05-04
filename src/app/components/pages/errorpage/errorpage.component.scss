@@ -1,0 +1,32 @@
+#animation-box{
+    animation: error-animation 15s infinite linear;
+}
+
+@keyframes error-animation {
+    0%{transform: translate(50%, 45vw);}
+    10%{transform: translateX(50%);}
+    20%{transform: translateX(50%); transform: scale(3);}
+    25%{transform: translateX(50%); transform: scale(1);}
+    30%{transform: translate(80vw); transform: scale(3);}
+}
+
+
+/*
+    I want it to rise from the bottom center
+    go to the middle of the page
+    grow
+    shrink
+    tilt right
+    go to the right
+    tilt none
+    grow
+    shrink
+    tilt left
+    go to the left
+    tilt none
+    grow
+    shrink
+    tilt right
+    go to center
+    fall out the bottom center
+*/
