@@ -1,5 +1,8 @@
-<div class="container">
-  <h1>Login</h1>
-  </div>
-  <firebase-ui (signInSuccessWithAuthResult)="successCallback($event)"
-  (signInFailure)="errorCallback($event)">></firebase-ui>
+
+<h1 class='center' *ngIf="!loggedIn">Login</h1>
+<div *ngIf="loggedIn" class="container">
+  <h1 >You are Logged In</h1>
+  <button mat-raised-button color="primary" (click)="playGame()">Play</button>
+</div>
+<firebase-ui (signInSuccessWithAuthResult)="successCallback($event)" (signInFailure)="errorCallback($event)"
+  (uiShown)="isShown($event)"></firebase-ui>

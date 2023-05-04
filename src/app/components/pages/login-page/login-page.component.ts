@@ -12,6 +12,7 @@ import { Observable, catchError, throwError } from 'rxjs';
   styleUrls: ['./login-page.component.scss']
 })
 export class LoginPageComponent {
+  loggedIn = true;
   loginForm: FormGroup;
   hasNoAccount = false;
   players: Player[] = [];
@@ -32,7 +33,9 @@ export class LoginPageComponent {
       // password: ['', Validators.required],
    
   }
-  
+  playGame(){
+    this.router.navigateByUrl('/show-cards')
+  }
   successCallback(signInSuccessData){
     console.log('Signed in successfully');
     this.router.navigateByUrl('/show-cards')
@@ -41,7 +44,9 @@ export class LoginPageComponent {
     console.log("Login Failed")
     this.router.navigateByUrl('/')
   }
-
+  isShown(event){
+    this.loggedIn = false
+  }
 
   getPlayerObservable(id: string | null): Observable<Player> | undefined {
     return this.db.doc<Player>(`players/${id}`).valueChanges()
