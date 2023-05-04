@@ -14,6 +14,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import {firebase, firebaseui, FirebaseUIModule} from 'firebaseui-angular';
 import { Auth, provideAuth } from '@angular/fire/auth';
 import { getAuth } from 'firebase/auth';
+import { FormsModule } from '@angular/forms';
+import { AngularFireAuthModule, USE_EMULATOR as USE_AUTH_EMULATOR } from '@angular/fire/compat/auth';
+import { FlexLayoutModule } from '@angular/flex-layout';
+
+
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
   signInFlow: 'popup',
   signInOptions: [
@@ -36,12 +41,16 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    FormsModule,
     AppRoutingModule,
     MatCardModule,
     HttpClientModule,
+    FlexLayoutModule,
     AngularFirestoreModule,
     AngularFireModule.initializeApp(environment.firebase),
     FirebaseUIModule.forRoot(firebaseUiAuthConfig),
+    AngularFireAuthModule,
     provideAuth(()=> getAuth())
   ],
   exports: [
