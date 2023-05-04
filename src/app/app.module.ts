@@ -17,8 +17,9 @@ import { getAuth } from 'firebase/auth';
 import { FormsModule } from '@angular/forms';
 import { AngularFireAuthModule, USE_EMULATOR as USE_AUTH_EMULATOR } from '@angular/fire/compat/auth';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MatButtonModule } from '@angular/material/button'
-
+import { MatButtonModule } from '@angular/material/button';
+import { GameSetupComponent } from './game-setup/game-setup.component'
+import {MatSelectModule} from '@angular/material/select'
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
   signInFlow: 'popup',
@@ -38,7 +39,8 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     AppComponent,
     Page4Component,
     CardComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    GameSetupComponent
   ],
   imports: [
     BrowserModule,
@@ -50,6 +52,7 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     HttpClientModule,
     FlexLayoutModule,
     AngularFirestoreModule,
+    MatSelectModule,
     AngularFireModule.initializeApp(environment.firebase),
     FirebaseUIModule.forRoot(firebaseUiAuthConfig),
     AngularFireAuthModule,
