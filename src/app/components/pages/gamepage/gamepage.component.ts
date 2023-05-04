@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { CardComponent } from '../../cards/card/card.component';
 import { ApiService } from 'src/app/services/api.service';
 
@@ -7,7 +7,7 @@ import { ApiService } from 'src/app/services/api.service';
   templateUrl: './gamepage.component.html',
   styleUrls: ['./gamepage.component.scss']
 })
-export class GamepageComponent implements OnInit{
+export class GamepageComponent implements OnInit, AfterViewInit{
     samples = <number[]> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
     grid_order_top = <number[]> [0, 1, 2, 3, 4, 5]
     grid_order_side = <any> ['A', 'B', 'C', 'D']
@@ -21,6 +21,11 @@ export class GamepageComponent implements OnInit{
 
 
     constructor(private apiservice: ApiService) {}
+
+    ngAfterViewInit(){
+      console.log('after view');
+      console.log(this.shuffledArr)
+    }
     
     
   ngOnInit(): void {
@@ -62,7 +67,7 @@ export class GamepageComponent implements OnInit{
       this.checkRandindx(ridx, card) //Checks if that index already has a card, makes shuffledArr
     });
 
-    console.log('shuffledArr: ', this.shuffledArr)
+    console.log('when ready shuffledArr: ', this.shuffledArr)
   }
 
   
@@ -89,6 +94,10 @@ export class GamepageComponent implements OnInit{
 
   randnum(max){
     return Math.floor((Math.random() * max) + 0)
+  }
+
+  hi(){
+    console.log('clicked')
   }
 
 }
