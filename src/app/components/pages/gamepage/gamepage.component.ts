@@ -29,43 +29,40 @@ export class GamepageComponent implements OnInit{
       let rnum = this.randnum(this.max) //Gets a random number between 0 and max
       this.checkRandnums(rnum, element); //Check to make sure it doesn't already exist
     })
-
+ 
     //randnums = [1, 5, 345, 1015, 342, 985, etc]
 
     this.randnums.forEach(rnum => {
-      this.apiservice.getData(rnum).subscribe((data) => //Get that card from the api
+      this.apiservice.getData(rnum).subscribe((data) => {//Get that card from the api
         //pass that card to the array
-        this.cardsArr.push({name: data?.forms[0].name, types: {type1: data?.types[0].type.name, type2: data?.types[1].type.name}, image: data?.sprites.front_default, index: rnum },)
-      );
-    })
+        this.cardsArr.push({name: data?.forms[0].name, image: data?.sprites.front_default, index: rnum },)
 
-    this.whenCardsReady()
+        if(this.cardsArr.length == 10){
+          this.whenCardsReady()
+        }
+      });
+    })
+    
     
 
   }
 
   whenCardsReady(){
-    if(this.cardsArr.length == 10){
-        //cardsArr = [{card1}, {card5}, {card345}, etc]
+    //cardsArr = [{card1}, {card5}, {card345}, etc]
 
-      this.cardsArr.forEach(card => {
-        this.cardsArr.push(card)
-      }); //each card is now in the array twice
+    this.cardsArr.forEach(card => {
+      this.cardsArr.push(card)
+    }); //each card is now in the array twice
 
-      //cardsArr = [{card1}, {card5}, {card345}, etc, {card1}, {card5}, {card345}, etc]
+    //cardsArr = [{card1}, {card5}, {card345}, etc, {card1}, {card5}, {card345}, etc]
 
-      this.max = 20;
-      this.cardsArr.forEach(card => {
-        let ridx = this.randnum(this.max) //Gets a random (index) number between 0 and max
-        this.checkRandindx(ridx, card) //Checks if that index already has a card, makes shuffledArr
-      });
+    this.max = 20;
+    this.cardsArr.forEach(card => {
+      let ridx = this.randnum(this.max) //Gets a random (index) number between 0 and max
+      this.checkRandindx(ridx, card) //Checks if that index already has a card, makes shuffledArr
+    });
 
-      console.log('shuffledArr: ', this.shuffledArr)
-    }
-    else{
-      setTimeout(this.whenCardsReady, 2000)
-    }
-    
+    console.log('shuffledArr: ', this.shuffledArr)
   }
 
   
