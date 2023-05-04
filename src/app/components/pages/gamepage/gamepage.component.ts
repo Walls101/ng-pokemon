@@ -12,7 +12,7 @@ export class GamepageComponent implements OnInit{
     grid_order_top = <number[]> [0, 1, 2, 3, 4, 5]
     grid_order_side = <any> ['A', 'B', 'C', 'D']
     cardsArr = <any[]> []
-    shuffledArr = <number[]> []
+    shuffledArr = <any[]> []
 
     array10 = <number[]> [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
     randnums = <number[]> []
@@ -35,7 +35,7 @@ export class GamepageComponent implements OnInit{
     this.randnums.forEach(rnum => {
       this.apiservice.getData(rnum).subscribe((data) => {//Get that card from the api
         //pass that card to the array
-        this.cardsArr.push({name: data?.forms[0].name, image: data?.sprites.front_default, index: rnum },)
+        this.cardsArr.push({name: data?.forms[0].name, types: {type1: data?.types[0].type?.name, type2: data?.types[1].type?.name}, image: data?.sprites.front_default, index: rnum },)
 
         if(this.cardsArr.length == 10){
           this.whenCardsReady()

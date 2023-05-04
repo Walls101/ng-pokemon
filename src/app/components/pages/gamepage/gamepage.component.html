@@ -1,6 +1,8 @@
 
 <div id="gamepage-container">
-    <div style="height: 10%;">A navbar could go here if we want.</div>
+    <div style="height: 10%;">
+        <div>blah {{shuffledArr}}</div>
+    </div>
     <div id="game-grid-container">
         <table class="grid-order" id="grid-order-top">
             <tr id="grid-order-top-grid">
@@ -12,7 +14,7 @@
                 <span class="grid-order-letter" *ngFor="let order of grid_order_side">{{order}}</span>
             </div>
             <div id="game-cards-container">
-                <span class="game-card-container" *ngFor="let sample of samples">{{sample}}</span>
+                <app-card [cards]="[shuffledArr]" *ngFor="let sample of samples"/>
             </div>
         </div>
     </div>
