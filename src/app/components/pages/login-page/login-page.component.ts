@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { PlayersService } from 'src/app/services/players.service';
 import { Player } from 'src/app/interfaces/players';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 import { Observable, catchError, throwError } from 'rxjs';
-import { HotToastService } from '@ngneat/hot-toast'
+
 
 @Component({
   selector: 'app-login-page',
@@ -20,6 +19,7 @@ export class LoginPageComponent {
   playersRef: AngularFirestoreCollection<Player>
   player: Player;
   playerName: string = '';
+
   constructor(
     private router: Router,
     private route: ActivatedRoute,
@@ -32,6 +32,7 @@ export class LoginPageComponent {
       // password: ['', Validators.required],
    
   }
+  
   successCallback(signInSuccessData){
     console.log('Signed in successfully');
     this.router.navigateByUrl('/show-cards')
@@ -40,6 +41,7 @@ export class LoginPageComponent {
     console.log("Login Failed")
     this.router.navigateByUrl('/')
   }
+
 
   getPlayerObservable(id: string | null): Observable<Player> | undefined {
     return this.db.doc<Player>(`players/${id}`).valueChanges()
