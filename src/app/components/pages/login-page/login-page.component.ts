@@ -33,16 +33,14 @@ export class LoginPageComponent {
       // password: ['', Validators.required],
    
   }
-  playGame(){
-    this.router.navigateByUrl('/show-cards')
-  }
+
   successCallback(signInSuccessData){
     console.log('Signed in successfully');
-    this.router.navigateByUrl('/show-cards')
+    this.loggedIn = true
   }
   errorCallback(errorData) {
     console.log("Login Failed")
-    this.router.navigateByUrl('/')
+
   }
   isShown(event){
     this.loggedIn = false

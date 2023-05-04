@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 interface Player {
   val: string
 }
@@ -14,4 +15,11 @@ export class GameSetupComponent {
     {val: 'Player3'},
     {val: 'Plyaer4'}
   ]
+action: any;
+  constructor(
+    private router: Router
+  ){}
+  playGame(){
+    this.router.navigateByUrl('/game')
+  }
 }

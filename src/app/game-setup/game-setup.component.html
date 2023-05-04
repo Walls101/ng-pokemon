@@ -1,8 +1,11 @@
-<h1 class="center">Select number of players...</h1>
+<mat-card>
+<mat-card-title class="center">Select number of players...</mat-card-title>
 <mat-form-field appearance="fill">
     <mat-label>Number of players</mat-label>
-    <mat-select>
+    <mat-select [(ngModel)]="action">
         <mat-option *ngFor="let player of players" [value]="player.val">{{player.val}}</mat-option>
     </mat-select>
-
 </mat-form-field>
+<button mat-raised-button color="primary" (click)="playGame()" [disabled]="!action || action.length == 0">Play</button>
+
+</mat-card>
