@@ -1,8 +1,7 @@
 
 <div id="gamepage-container">
     <div style="height: 10%;">
-        <div>blah {{shuffledArr}}</div>
-        <button (click)="hi()">CLICK ME</button>
+        Player data will go here.
     </div>
     <div id="game-grid-container">
         <table class="grid-order" id="grid-order-top">
@@ -15,7 +14,7 @@
                 <span class="grid-order-letter" *ngFor="let order of grid_order_side">{{order}}</span>
             </div>
             <div id="game-cards-container">
-                <app-card [cards]="[shuffledArr]" *ngFor="let sample of samples"/>
+                <app-card [cards]="[shuffledArr]" [index]="num" *ngFor="let num of array20"/>
             </div>
         </div>
     </div>

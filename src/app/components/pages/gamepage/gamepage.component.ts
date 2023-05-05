@@ -8,7 +8,7 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./gamepage.component.scss']
 })
 export class GamepageComponent implements OnInit, AfterViewInit{
-    samples = <number[]> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+    array20 = <number[]> [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
     grid_order_top = <number[]> [0, 1, 2, 3, 4, 5]
     grid_order_side = <any> ['A', 'B', 'C', 'D']
     cardsArr = <any[]> []
@@ -23,8 +23,7 @@ export class GamepageComponent implements OnInit, AfterViewInit{
     constructor(private apiservice: ApiService) {}
 
     ngAfterViewInit(){
-      console.log('after view');
-      console.log(this.shuffledArr)
+      console.log('after view', this.shuffledArr);
     }
     
     
@@ -40,7 +39,7 @@ export class GamepageComponent implements OnInit, AfterViewInit{
     this.randnums.forEach(rnum => {
       this.apiservice.getData(rnum).subscribe((data) => {//Get that card from the api
         //pass that card to the array
-        this.cardsArr.push({name: data?.forms[0].name, types: {type1: data?.types[0].type?.name, type2: data?.types[1].type?.name}, image: data?.sprites.front_default, index: rnum },)
+        this.cardsArr.push({name: data?.forms[0].name, image: data?.sprites.front_default, index: rnum },) // types: {type1: data?.types[0].type?.name, type2: data?.types[1].type?.name}, //for some reason, adding the types in breaks everything. The console.log's show that they exist properly, but the errors say they are undefined.
 
         if(this.cardsArr.length == 10){
           this.whenCardsReady()
@@ -97,7 +96,8 @@ export class GamepageComponent implements OnInit, AfterViewInit{
   }
 
   hi(){
-    console.log('clicked')
+    // this.shuffledArr = [5, 6, 7, 2, 1]
+    console.log('when clicked ', this.shuffledArr)
   }
 
 }

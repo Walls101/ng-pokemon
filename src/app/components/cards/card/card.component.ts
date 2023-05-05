@@ -11,15 +11,14 @@ export class CardComponent implements OnInit {
   constructor() {}
   
   @Input() cards;
+  @Input() index;
 
 
 
 
 
   ngOnInit() {
-    console.log('card-component cards: ', this.cards)
-
-
+    
   }
 
 
