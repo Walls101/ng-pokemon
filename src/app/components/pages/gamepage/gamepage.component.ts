@@ -119,6 +119,9 @@ export class GamepageComponent implements OnInit{
         this.guessArr = [] //clear the guesses
       }
     }
+    else if(this.guessArr.length >= 3){
+      console.log('Error: guessArr has too many values')
+    }
     else{
       // nothing really
     }
