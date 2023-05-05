@@ -1,10 +1,10 @@
 <div class="card">
-    <h2 class="card-name">{{cards[0][index].name}}</h2>
+    <h2 class="card-name">{{cards[0][index].name | uppercase}}</h2>
     <img src="{{cards[0][index].image}}"/>
-    <div class="card-types-box">
-        <!-- <h4 class="card-types" id="card-type-one">{{cards[0].types.type1 | titlecase}}</h4>
-        <h4 class="card-types" id="card-type-two">{{cards[0].types.type2 | titlecase}}</h4> -->
-    </div>
+    <!-- <div class="card-types-box">
+        <h4 class="card-types" id="card-type-one">{{cards[0].types.type1 | titlecase}}</h4>
+        <h4 class="card-types" id="card-type-two">{{cards[0].types.type2 | titlecase}}</h4>
+    </div> -->
     <p class="card-index">
         Poke index: {{cards[0][index].index}}
     </p>
