@@ -12,7 +12,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore'
 import { Page4Component } from './components/pages/page4/page4.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import {firebase, firebaseui, FirebaseUIModule} from 'firebaseui-angular';
-import { Auth, provideAuth } from '@angular/fire/auth';
+import { provideAuth } from '@angular/fire/auth';
 import { getAuth } from 'firebase/auth';
 import { FormsModule } from '@angular/forms';
 import { AngularFireAuthModule, USE_EMULATOR as USE_AUTH_EMULATOR } from '@angular/fire/compat/auth';
@@ -20,6 +20,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatButtonModule } from '@angular/material/button';
 import { GameSetupComponent } from './game-setup/game-setup.component'
 import {MatSelectModule} from '@angular/material/select'
+import { GamepageComponent } from './components/pages/gamepage/gamepage.component';
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
   signInFlow: 'popup',
@@ -40,7 +41,8 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     Page4Component,
     CardComponent,
     LoginPageComponent,
-    GameSetupComponent
+    GameSetupComponent,
+    GamepageComponent
   ],
   imports: [
     BrowserModule,
