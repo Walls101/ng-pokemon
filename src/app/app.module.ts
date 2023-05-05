@@ -17,6 +17,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSliderModule } from "@angular/material/slider";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatListModule } from '@angular/material/list'
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +39,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     FormsModule,
     BrowserAnimationsModule,
     MatNativeDateModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatListModule,
 
   ],
   exports: [
