@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { CardComponent } from '../../cards/card/card.component';
 import { ApiService } from 'src/app/services/api.service';
 
@@ -7,12 +7,12 @@ import { ApiService } from 'src/app/services/api.service';
   templateUrl: './gamepage.component.html',
   styleUrls: ['./gamepage.component.scss']
 })
-export class GamepageComponent implements OnInit{
-    samples = <number[]> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+export class GamepageComponent implements OnInit, AfterViewInit{
+    array20 = <number[]> [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
     grid_order_top = <number[]> [0, 1, 2, 3, 4, 5]
     grid_order_side = <any> ['A', 'B', 'C', 'D']
     cardsArr = <any[]> []
-    shuffledArr = <number[]> []
+    shuffledArr = <any[]> []
 
     array10 = <number[]> [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
     randnums = <number[]> []
@@ -21,6 +21,10 @@ export class GamepageComponent implements OnInit{
 
 
     constructor(private apiservice: ApiService) {}
+
+    ngAfterViewInit(){
+      console.log('after view', this.shuffledArr);
+    }
     
     
   ngOnInit(): void {
@@ -35,7 +39,7 @@ export class GamepageComponent implements OnInit{
     this.randnums.forEach(rnum => {
       this.apiservice.getData(rnum).subscribe((data) => {//Get that card from the api
         //pass that card to the array
-        this.cardsArr.push({name: data?.forms[0].name, image: data?.sprites.front_default, index: rnum },)
+        this.cardsArr.push({name: data?.forms[0].name, image: data?.sprites.front_default, index: rnum },) // types: {type1: data?.types[0].type?.name, type2: data?.types[1].type?.name}, //for some reason, adding the types in breaks everything. The console.log's show that they exist properly, but the errors say they are undefined.
 
         if(this.cardsArr.length == 10){
           this.whenCardsReady()
@@ -62,7 +66,7 @@ export class GamepageComponent implements OnInit{
       this.checkRandindx(ridx, card) //Checks if that index already has a card, makes shuffledArr
     });
 
-    console.log('shuffledArr: ', this.shuffledArr)
+    console.log('when ready shuffledArr: ', this.shuffledArr)
   }
 
   
@@ -89,6 +93,11 @@ export class GamepageComponent implements OnInit{
 
   randnum(max){
     return Math.floor((Math.random() * max) + 0)
+  }
+
+  hi(){
+    // this.shuffledArr = [5, 6, 7, 2, 1]
+    console.log('when clicked ', this.shuffledArr)
   }
 
 }
