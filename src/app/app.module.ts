@@ -18,12 +18,36 @@ import { MatSliderModule } from "@angular/material/slider";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatListModule } from '@angular/material/list'
+import {firebase, firebaseui, FirebaseUIModule} from 'firebaseui-angular';
+import { provideAuth } from '@angular/fire/auth';
+import { getAuth } from 'firebase/auth';
+import { AngularFireAuthModule, USE_EMULATOR as USE_AUTH_EMULATOR } from '@angular/fire/compat/auth';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatButtonModule } from '@angular/material/button';
+import { GameSetupComponent } from './game-setup/game-setup.component'
+import {MatSelectModule} from '@angular/material/select'
+
+const firebaseUiAuthConfig: firebaseui.auth.Config = {
+  signInFlow: 'popup',
+  signInOptions: [
+    firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+    {
+      requireDisplayName: false,
+      provider: firebase.auth.EmailAuthProvider.PROVIDER_ID
+    },
+  ],
+  tosUrl: 'https://www.google.com',
+  privacyPolicyUrl: 'https://www.google.com',
+  credentialHelper: firebaseui.auth.CredentialHelper.GOOGLE_YOLO
+};
+
 @NgModule({
   declarations: [
     AppComponent,
     Page4Component,
     CardComponent,
     LoginPageComponent,
+    GameSetupComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,6 +65,12 @@ import { MatListModule } from '@angular/material/list'
     MatNativeDateModule,
     ReactiveFormsModule,
     MatListModule,
+    MatButtonModule,
+    FlexLayoutModule,
+    MatSelectModule,
+    FirebaseUIModule.forRoot(firebaseUiAuthConfig),
+    AngularFireAuthModule,
+    provideAuth(()=> getAuth())
 
   ],
   exports: [
