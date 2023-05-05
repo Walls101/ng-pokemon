@@ -10,12 +10,9 @@ import { GameSetupComponent } from './game-setup/game-setup.component';
 
 const routes: Routes = [
   { path: '', component: LoginPageComponent },
-  { path: 'show-cards', component: CardComponent },
-  {path: 'page4', component: Page4Component},
-
-
   {path: 'game', component: GamepageComponent},
   {path: 'game-setup', component: GameSetupComponent},
+  {path: 'page4', component: Page4Component},
   {path: '**', component: ErrorpageComponent}
 ];
 

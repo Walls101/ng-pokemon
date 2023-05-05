@@ -5,9 +5,10 @@
 @keyframes error-animation {
     0%{transform: translate(50%, 45vw);}
     10%{transform: translateX(50%);}
-    20%{transform: translateX(50%); transform: scale(3);}
-    25%{transform: translateX(50%); transform: scale(1);}
-    30%{transform: translate(80vw); transform: scale(3);}
+    20%{transform: translateX(50%);}
+    25%{transform: translateX(50%);}
+    30%{transform: translateX(80vw);}
+    // 100%{transform: translate(50%, 45vw);}
 }
 
 
