@@ -12,7 +12,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore'
 import { Page4Component } from './components/pages/page4/page4.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import {firebase, firebaseui, FirebaseUIModule} from 'firebaseui-angular';
-import { Auth, provideAuth } from '@angular/fire/auth';
+import { provideAuth } from '@angular/fire/auth';
 import { getAuth } from 'firebase/auth';
 import { FormsModule } from '@angular/forms';
 import { AngularFireAuthModule, USE_EMULATOR as USE_AUTH_EMULATOR } from '@angular/fire/compat/auth';
