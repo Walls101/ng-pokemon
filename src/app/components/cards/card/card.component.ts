@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { GamepageComponent } from '../../pages/gamepage/gamepage.component';
 @Component({
   selector: 'app-card',
@@ -11,11 +11,14 @@ export class CardComponent implements OnInit {
   constructor() {}
   
   @Input() cards;
-  @Input() index;
+  @Input() num;
 
+  @Output() place = new EventEmitter<number>();
 
-
-
+  emit(place){
+    console.log('Card emitted. place: ', place)
+    this.place.emit(place)
+  }
 
   ngOnInit() {
     

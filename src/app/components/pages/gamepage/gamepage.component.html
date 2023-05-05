@@ -14,8 +14,7 @@
                 <span class="grid-order-letter" *ngFor="let order of grid_order_side">{{order}}</span>
             </div>
             <div id="game-cards-container">
-                <app-card [cards]="[shuffledArr]" [index]="num" *ngFor="let num of array20"/>
-                
+                <app-card [cards]="[shuffledArr]" [num]="num" *ngFor="let num of array20" (place)="onEmit($event)"/>
             </div>
         </div>
     </div>
