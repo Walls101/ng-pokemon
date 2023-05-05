@@ -1,0 +1,9 @@
+
+<h1 class='center' *ngIf="!loggedIn">Login</h1>
+<div *ngIf="loggedIn" class="container">
+  <h1 class="title">Welcome!</h1>
+  <app-game-setup></app-game-setup>
+
+</div>
+<firebase-ui (signInSuccessWithAuthResult)="successCallback($event)" (signInFailure)="errorCallback($event)"
+  (uiShown)="isShown($event)"></firebase-ui>

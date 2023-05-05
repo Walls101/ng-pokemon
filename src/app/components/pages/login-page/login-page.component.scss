@@ -1,7 +1,9 @@
 .container {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 10% auto 5px auto;
+
 }
 .center {
     display: flex;
@@ -16,9 +18,11 @@
 mat-card {
     padding: 20px;
     width: 40%;
-    margin: 10px;
 }
 .haveAccountButton {
     display: flex;
     justify-content: center;
+}
+.title {
+    font-size: 30px;
 }

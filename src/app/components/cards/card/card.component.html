@@ -1,18 +1,23 @@
-<!-- <div class="card}>
-    <h2 class="card-name}>{{cards[0].name}}</h2>
+<div class="card">
+    <h2 class="card-name">{{cards[0].name}}</h2>
     <img src="{{cards[0].image | uppercase}}"/>
-    <div class="card-types-box}>
+    <div class="card-types-box">
         <h4 class="card-types" id="card-type-one">{{cards[0].types.type1 | titlecase}}</h4>
         <h4 class="card-types" id="card-type-two">{{cards[0].types.type2 | titlecase}}</h4>
     </div>
-</div> -->
-<div *ngFor="let index of indexes" style="width: 20%; height: 30%; border: 1px solid rebeccapurple; margin-left: 10%;">
-    <div class="card">
-        <h2 class="card-name">{{cards[index].name | uppercase}}</h2>
-        <img class="card-image" src="{{cards[index].image}}"/>
-        <div class="card-types-box">
-            <h4 class="card-types" id="card-type-one">{{cards[index].types.type1 | titlecase}}</h4>
-            <h4 class="card-types" id="card-type-two">{{cards[index].types.type2 | titlecase}}</h4>
-        </div>
-    </div>
+    <p class="card-index">
+        Poke index: {{cards[0].index}}
+    </p>
 </div>
+
+<!-- <div class="card">
+    <h2 class="card-name">{{cards[index].name | uppercase}}</h2>
+    <img class="card-image" src="{{cards[index].image}}"/>
+    <div class="card-types-box">
+        <h4 class="card-types" id="card-type-one">{{cards[index].types.type1 | titlecase}}</h4>
+        <h4 class="card-types" id="card-type-two">{{cards[index].types.type2 | titlecase}}</h4>
+    </div>
+    <p class="card-index">
+        Poke index: {{cards[index].index}}
+    </p>
+</div> -->
