@@ -20,6 +20,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatButtonModule } from '@angular/material/button';
 import { GameSetupComponent } from './game-setup/game-setup.component'
 import {MatSelectModule} from '@angular/material/select'
+import { GamepageComponent } from './components/pages/gamepage/gamepage.component';
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
   signInFlow: 'popup',
@@ -40,7 +41,8 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     Page4Component,
     CardComponent,
     LoginPageComponent,
-    GameSetupComponent
+    GameSetupComponent,
+    GamepageComponent
   ],
   imports: [
     BrowserModule,
