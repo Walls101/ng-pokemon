@@ -20,14 +20,12 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatListModule } from '@angular/material/list'
 import {firebase, firebaseui, FirebaseUIModule} from 'firebaseui-angular';
 import { provideAuth } from '@angular/fire/auth';
-import { provideAuth } from '@angular/fire/auth';
 import { getAuth } from 'firebase/auth';
 import { AngularFireAuthModule, USE_EMULATOR as USE_AUTH_EMULATOR } from '@angular/fire/compat/auth';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatButtonModule } from '@angular/material/button';
 import { GameSetupComponent } from './game-setup/game-setup.component'
 import {MatSelectModule} from '@angular/material/select'
-import { GamepageComponent } from './components/pages/gamepage/gamepage.component';
 import { GamepageComponent } from './components/pages/gamepage/gamepage.component';
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
