@@ -1,5 +1,5 @@
 export interface Player {
-    email: string,
+    username: string,
     gamesLost?: number,
     gamesPlayed?: number,
     gamesWon?: number,
