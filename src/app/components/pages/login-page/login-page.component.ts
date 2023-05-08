@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Player } from 'src/app/interfaces/players';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 import { Observable, catchError, throwError } from 'rxjs';
+import { PlayersService } from 'src/app/services/players.service';
 
 
 @Component({
@@ -12,6 +13,7 @@ import { Observable, catchError, throwError } from 'rxjs';
   styleUrls: ['./login-page.component.scss']
 })
 export class LoginPageComponent {
+  saved = false
   loggedIn = true;
   loginForm: FormGroup;
   hasNoAccount = false;
@@ -42,20 +44,15 @@ export class LoginPageComponent {
     console.log("Login Failed")
 
   }
+  savePlayer(player: Player){
+    this.playersRef.add(player)
+    this.saved = true;
+  }
   isShown(event){
     this.loggedIn = false
   }
 
-  getPlayerObservable(id: string | null): Observable<Player> | undefined {
-    return this.db.doc<Player>(`players/${id}`).valueChanges()
-    .pipe(
-      catchError(this.errorHandler)
-    )
-  }
-  private errorHandler(error: unknown) {
-    console.log(error)
-    return throwError(error)
-  }
+
 
    register(player: Player) {
     console.log(this.playerName)

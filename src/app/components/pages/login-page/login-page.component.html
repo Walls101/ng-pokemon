@@ -1,8 +1,20 @@
 
+
 <h1 class='center' *ngIf="!loggedIn">Login</h1>
 <div *ngIf="loggedIn" class="container">
+  <div *ngIf="!saved">
+  <label for="username">Username</label>
+
+    <input type="text" id="username" [(ngModel)]="playerName">
+    <button (click)="savePlayer({'username': playerName})">Save</button>
+  </div>
+
+<div *ngIf="saved">
   <h1 class="title">Welcome!</h1>
   <app-game-setup></app-game-setup>
+</div>
+
+
 
 </div>
 <firebase-ui (signInSuccessWithAuthResult)="successCallback($event)" (signInFailure)="errorCallback($event)"
