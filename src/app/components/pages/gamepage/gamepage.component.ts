@@ -8,6 +8,8 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./gamepage.component.scss']
 })
 export class GamepageComponent implements OnInit{
+    show_message = 'none';
+
     array20 = <number[]> [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
     grid_order_top = <number[]> [0, 1, 2, 3, 4, 5]
     grid_order_side = <any> ['A', 'B', 'C', 'D']
@@ -112,7 +114,7 @@ export class GamepageComponent implements OnInit{
       }
       else if(this.guessArr[0][0] == this.guessArr[1][0]){ //check if the cards are a match
         //stop rendering those cards, add a point to the correct player
-
+        this.showMessage()
         this.guessArr = [] //clear the guesses
       }
       else{ //If the guessed cards aren't a match
@@ -128,4 +130,16 @@ export class GamepageComponent implements OnInit{
 
   }
 
+  //--------------
+  showMessage(){
+    this.show_message = 'block';
+    setTimeout(this.hideMessage, 1000);
+  };
+  
+  hideMessage(){
+    console.log('hiding message')
+    this.show_message = 'none';
+  }
+
 }
+

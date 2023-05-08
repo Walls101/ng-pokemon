@@ -4,6 +4,25 @@
     background-color: darkslategrey;
 }
 
+#gamepage-top-container{
+    height: 10%;
+    display: flex;
+}
+
+#game-player-data{
+    width: 80%;
+}
+
+#game-message-box{
+    width: 20%;
+}
+
+#game-message{
+    // display: block; //controlled inline by the ts
+    color: yellow;
+}
+
+
 #game-grid-container{
     width: 100%;
     height: 90%;
