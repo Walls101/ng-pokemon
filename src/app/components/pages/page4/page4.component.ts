@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 // import { ThemePalette } from '@angular/material/core';
 // import {ProgressSpinnerMode} from '@angular/material/progress-spinner'
 
@@ -9,7 +10,13 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 
 export class Page4Component implements OnInit {
-  constructor(){}
+  constructor(private fbs: AngularFirestore){}
+
+  getData(){
+    return this.fbs
+    .collection("collectionName")
+    .snapshotChanges();
+  }
   @Input() wonGames: number = 10;
   @Input() lostGames: number = 2;
   totalGames: number = 12;
