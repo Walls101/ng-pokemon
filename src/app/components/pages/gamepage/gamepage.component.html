@@ -5,7 +5,7 @@
             Player data will go here.
         </div>
         <div id="game-message-box">
-            <span id="game-message" style="display: {{show_message}}">Match found!</span>
+            <span id="game-message" *ngIf="show_message">Match found!</span>
         </div>
     </div>
     <div id="game-grid-container">
