@@ -5,50 +5,59 @@
 
 <mat-card class="example-card">
   <mat-card-content>
-    <h2>Username:</h2>
-    <h3>Got2bGood</h3>
+    <h2>Player Name:</h2>
+    <h3>jdoe</h3>
   </mat-card-content>
-
+<!-- 
   <mat-card-content>
     <h2>Rank/Level</h2>
     <h3>Bronze</h3>
     <h3>40/130</h3>
-  </mat-card-content>
+  </mat-card-content> -->
 </mat-card>
 
 
-<mat-card class="example-card">
-  <mat-card-content>
-    <h2 class="example-h2">Result</h2>
+
+  <h2 class="example-h2">Result</h2>
+  <mat-card-content class="progress">
     <section class="example-section">
-      <mat-radio-group [(ngModel)]="color">
-        <mat-radio-button class="example-margin" value="primary">
+      <!-- <mat-radio-group [(ngModel)]="color"> -->
+        <!-- <mat-radio-button class="example-margin" value="primary"> -->
           <!-- THis will be where the user will see their wins -->
-          Wins
-        </mat-radio-button>
-        <mat-radio-button class="example-margin" value="accent">
+          <!-- Wins -->
+        <!-- </mat-radio-button> -->
+        <!-- <mat-radio-button class="example-margin" value="accent"> -->
           <!-- This will be the loses the user has -->
-          Loses
-        </mat-radio-button>
-      </mat-radio-group>
+          <!-- Loses -->
+        <!-- </mat-radio-button> -->
+      <!-- </mat-radio-group> -->
+
     </section>
 
   </mat-card-content>
 
-  <mat-card-content >
-    <mat-progress-spinner
-      class="example-margin"
+  
+  <mat-card-content class="data">
+    <div>
+      <h3>List of players won against:</h3>
+      <mat-list role="list" class="">
+        <mat-list-item role="listitem">Travis</mat-list-item>
+        <mat-list-item role="listitem">Alex</mat-list-item>
+        <mat-list-item role="listitem">Jacob</mat-list-item>
+      </mat-list> 
+    </div>
+       
+    <div class="spinner-sections">
+      <mat-progress-spinner
+      class="spinner"
       [value]="value"
       mode="determinate"
+      diameter="250"
       >
     </mat-progress-spinner>
+    <br>
+
+    <h3>Win rate is {{value}}%</h3>
+    </div>
+    
   </mat-card-content>
-  <mat-card-content>
-    <label>List of players</label>
-    <mat-list role="list">
-      <mat-list-item role="listitem">Item 1</mat-list-item>
-      <mat-list-item role="listitem">Item 2</mat-list-item>
-      <mat-list-item role="listitem">Item 3</mat-list-item>
-    </mat-list>    
-  </mat-card-content>
-</mat-card>

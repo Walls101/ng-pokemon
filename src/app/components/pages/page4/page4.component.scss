@@ -4,8 +4,9 @@
   
   .example-section {
     display: flex;
-    align-content: center;
-    align-items: center;
+    align-items: start;
+    // align-content: center;
+    // align-items: center;
     height: 60px;
   }
   
@@ -17,5 +18,27 @@
     margin-bottom: 10px;
     display: flex;
     flex-direction: row;
+    -ms-flex-align: stretch;
   }
   
+.progress {
+  // background-color: aqua;
+  display: flex;
+}
+
+.spinner {
+  // background-color: bisque;
+}
+
+.data {
+  // background-color: lawngreen;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.spinner-sections {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
