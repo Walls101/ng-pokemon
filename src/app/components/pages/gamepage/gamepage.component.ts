@@ -115,6 +115,8 @@ export class GamepageComponent implements OnInit{
       else if(this.guessArr[0][0] == this.guessArr[1][0]){ //check if the cards are a match
         //stop rendering those cards, add a point to the correct player
         this.showMessage()
+        this.shuffledArr.splice(this.guessArr[0][1], 1, {name: 'Invisible', image: 'assets/Images/CardGreenBack.png', index: 2000})
+        this.shuffledArr.splice(this.guessArr[1][1], 1, {name: 'Invisible', image: 'assets/Images/CardGreenBack.png', index: 2000})
         this.guessArr = [] //clear the guesses
       }
       else{ //If the guessed cards aren't a match
