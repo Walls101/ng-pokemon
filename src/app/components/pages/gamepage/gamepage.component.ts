@@ -104,8 +104,11 @@ export class GamepageComponent implements OnInit{
     console.log('gamepage got the emit. place: ', place)
     let index = place[0]
     let num = place[1]
-    //stick the place into guessArr
-    this.guessArr.push([index, num])
+    
+    if(index != 2000){ //If it's not the replaced card. If it's not already matched.
+      this.guessArr.push([index, num]) //stick the place into guessArr
+    }
+
     console.log('guessArr: ', this.guessArr)
 
    if(this.guessArr.length == 2){
