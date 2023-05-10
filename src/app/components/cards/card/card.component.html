@@ -1,4 +1,4 @@
-<div class="card" (click)="emit([cards[0][num].index, num])">
+<div class="card" (click)="emit([cards[0][num].index, num])" *ngIf="!cards[0][num].invis">
     <h2 class="card-name">{{cards[0][num].name | uppercase}}</h2>
     <img src="{{cards[0][num].image}}"/>
     <!-- <div class="card-types-box">
