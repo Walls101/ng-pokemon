@@ -104,8 +104,11 @@ export class GamepageComponent implements OnInit{
     console.log('gamepage got the emit. place: ', place)
     let index = place[0]
     let num = place[1]
-    //stick the place into guessArr
-    this.guessArr.push([index, num])
+    
+    if(index != 2000){ //If it's not the replaced card. If it's not already matched.
+      this.guessArr.push([index, num]) //stick the place into guessArr
+    }
+
     console.log('guessArr: ', this.guessArr)
 
    if(this.guessArr.length == 2){
@@ -113,8 +116,13 @@ export class GamepageComponent implements OnInit{
         this.guessArr.pop() //take that same second card out of the array
       }
       else if(this.guessArr[0][0] == this.guessArr[1][0]){ //check if the cards are a match
-        //stop rendering those cards, add a point to the correct player
-        this.showMessage()
+        this.showMessage() //Tell the players it was a match
+        //replace those matched cards with invisible ones.
+        this.shuffledArr.splice(this.guessArr[0][1], 1, {name: 'Invisible', image: 'assets/Images/CardGreenBack.png', index: 2000, invis: true})
+        this.shuffledArr.splice(this.guessArr[1][1], 1, {name: 'Invisible', image: 'assets/Images/CardGreenBack.png', index: 2000, invis: true})
+        
+        //Add a point to the correct player
+        
         this.guessArr = [] //clear the guesses
       }
       else{ //If the guessed cards aren't a match
