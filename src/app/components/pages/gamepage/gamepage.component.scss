@@ -79,12 +79,5 @@
     width: 98%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-}
-
-.game-card-container{
-    border: 1px solid green;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: crimson;
+    gap: 0px 0px;
 }
