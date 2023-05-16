@@ -2,6 +2,7 @@
     visibility: hidden;
 }
 
+
 .card{
     border: 1px solid black;
     border-radius: 10px;
@@ -11,7 +12,28 @@
     width: 50%;
     height: 82%;
     font-size: 2vw;
+    background-image: url('../../../../assets/Images/card.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    transform: rotateY(180deg);
+    transition: 1s;
+}
+
+
+.not > .card-name {
+    display: none;
+}
+.not > .card-index {
+    display: none;
+}
+.not > .card-image {
+    display: none;
+}
+
+.is{
+    background-image: none;
     background-color:floralwhite;
+    transform: rotateY(0deg);
 }
 
 

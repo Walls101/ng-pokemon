@@ -6,8 +6,9 @@ import { GamepageComponent } from '../../pages/gamepage/gamepage.component';
   styleUrls: ['./card.component.scss']
 })
 
-
 export class CardComponent implements OnInit {
+  rotated = 'not';
+
   constructor() {}
   
   @Input() cards;
@@ -15,13 +16,17 @@ export class CardComponent implements OnInit {
 
   @Output() place = new EventEmitter<number>();
 
+  ngOnInit() {
+    
+  }
+
   emit(place){
+    this.rotated = 'is'
     console.log('Card emitted. place: ', place)
     this.place.emit(place)
   }
 
-  ngOnInit() {
-    
+  back(){
   }
 
 

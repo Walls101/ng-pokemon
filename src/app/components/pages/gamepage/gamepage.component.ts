@@ -112,6 +112,7 @@ export class GamepageComponent implements OnInit{
     console.log('guessArr: ', this.guessArr)
 
    if(this.guessArr.length == 2){
+    
       if(this.guessArr[0][1] == this.guessArr[1][1]){ //check if they clicked the same card twice
         this.guessArr.pop() //take that same second card out of the array
       }

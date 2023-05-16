@@ -1,6 +1,6 @@
-<div class="card {{cards[0][num].invis}}" (click)="emit([cards[0][num].index, num])">
+<div class="card {{cards[0][num].invis}} {{rotated}}" (click)="emit([cards[0][num].index, num])">
     <h2 class="card-name">{{cards[0][num].name | uppercase}}</h2>
-    <img src="{{cards[0][num].image}}"/>
+    <img src="{{cards[0][num].image}}" class="card-image"/>
     <!-- <div class="card-types-box">
         <h4 class="card-types" id="card-type-one">{{cards[0].types.type1 | titlecase}}</h4>
         <h4 class="card-types" id="card-type-two">{{cards[0].types.type2 | titlecase}}</h4>
