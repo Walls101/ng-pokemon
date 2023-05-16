@@ -24,9 +24,11 @@ export class CardComponent implements OnInit {
     this.rotated = 'is'
     console.log('Card emitted. place: ', place)
     this.place.emit(place)
+    setTimeout(this.back, 3000)
   }
 
   back(){
+    this.rotated = 'not'
   }
 
 
